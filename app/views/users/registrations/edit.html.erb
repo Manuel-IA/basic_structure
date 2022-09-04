@@ -1,12 +1,44 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, data: { turbo: false } }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+
+  <%= f.fields_for :details do |details_form| %>
+    <div class="field">
+      <%= details_form.label :role_id %><br />
+      <%= details_form.select :role_id, (@roles.map{|role|[role[:name],role[:id]]}), {include_blank: 'Please Select a Role'}, required: true %>
+    </div>
+
+    <div class="field">
+      <%= details_form.label :first_name %><br />
+      <%= details_form.text_field :first_name %>
+    </div>
+
+    <div class="field">
+      <%= details_form.label :last_name %><br />
+      <%= details_form.text_field :last_name %>
+    </div>
+
+    <div class="field">
+      <%= details_form.label :phone_number %><br />
+      <%= details_form.text_field :phone_number %>
+    </div>
+
+    <div class="field">
+      <%= details_form.label :additional_info %><br />
+      <%= details_form.text_area :additional_info %>
+    </div>
+
+    <div class="field">
+      <%= details_form.label :status_id %><br />
+      <%= details_form.select :status_id, (@statuses.map{|status|[status[:name],status[:id]]}), {include_blank: 'Please Select a Status'}, required: true %>
+    </div>
+  <% end %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
