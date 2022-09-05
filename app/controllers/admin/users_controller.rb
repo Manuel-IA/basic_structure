@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :set_admin_user, only: %i[ show edit update destroy ]
+  before_action :set_form_choices, only: %i[ new create edit update ]
 
   # GET /admin/users or /admin/users.json
   def index
@@ -13,6 +14,7 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users/new
   def new
     @admin_user = Admin::User.new
+    @admin_user.build_details
   end
 
   # GET /admin/users/1/edit
@@ -63,8 +65,20 @@ class Admin::UsersController < ApplicationController
       @admin_user = Admin::User.find(params[:id])
     end
 
+    def set_form_choices
+      @roles = UserDetails.roles
+      @statuses = UserDetails.statuses
+    end
+
     # Only allow a list of trusted parameters through.
     def admin_user_params
-      params.require(:admin_user).permit(:email, :role_id, :first_name, :last_name, :phone_number, :additional_info, :status_id, :password, :password_confirmation)
+      permitted_params = [ :email, { details_attributes: [ :role_id, :first_name, :last_name, :phone_number, :additional_info, :status_id ] } ]
+
+      if ( !params[ :admin_user ].blank? && ( !params[ :admin_user ][ :password ].blank? || !params[ :admin_user ][ :password_confirmation ].blank? ) )
+        permitted_params << :password
+        permitted_params << :password_confirmation
+      end
+
+      params.require(:admin_user).permit(permitted_params)
     end
 end

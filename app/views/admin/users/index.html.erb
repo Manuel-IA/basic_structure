@@ -6,7 +6,8 @@
   <% @admin_users.each do |admin_user| %>
     <%= render admin_user %>
     <p>
-      <%= link_to "Show this user", admin_user %>
+      <%= link_to "Show this user", admin_user %> |
+      <%= link_to "Destroy this user", admin_user, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %>
     </p>
   <% end %>
 </div>

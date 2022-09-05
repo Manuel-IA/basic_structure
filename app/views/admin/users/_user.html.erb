@@ -6,7 +6,7 @@
 
   <p>
     <strong>Role:</strong>
-    <%= user.role_id %>
+    <%= user.details.role[:name] %>
   </p>
 
   <p>
@@ -31,17 +31,7 @@
 
   <p>
     <strong>Status:</strong>
-    <%= user.status_id %>
-  </p>
-
-  <p>
-    <strong>Password:</strong>
-    <%= user.password %>
-  </p>
-
-  <p>
-    <strong>Password confirmation:</strong>
-    <%= user.password_confirmation %>
+    <%= user.details.status[:name] %>
   </p>
 
 </div>
