@@ -6,7 +6,8 @@
   <% @admin_insurances.each do |admin_insurance| %>
     <%= render admin_insurance %>
     <p>
-      <%= link_to "Show this insurance", admin_insurance %>
+      <%= link_to "Show this insurance", admin_insurance %> |
+      <%= link_to "Destroy this insurance", admin_insurance, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %>
     </p>
   <% end %>
 </div>

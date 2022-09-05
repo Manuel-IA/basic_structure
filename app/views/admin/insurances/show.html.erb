@@ -6,5 +6,5 @@
   <%= link_to "Edit this insurance", edit_admin_insurance_path(@admin_insurance) %> |
   <%= link_to "Back to insurances", admin_insurances_path %>
 
-  <%= button_to "Destroy this insurance", @admin_insurance, method: :delete %>
+  <%= button_to "Destroy this insurance", @admin_insurance, method: :delete, form: { data: { turbo_confirm: 'Are you sure ?' } } %>
 </div>

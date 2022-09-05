@@ -1,1 +1,1 @@
-json.partial! "admin_insurances/admin_insurance", admin_insurance: @admin_insurance
+json.partial! "admin/insurances/insurance", admin_insurance: @admin_insurance
