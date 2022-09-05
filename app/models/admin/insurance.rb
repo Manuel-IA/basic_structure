@@ -1,2 +1,2 @@
-class Admin::Insurance < ApplicationRecord
+class Admin::Insurance < Insurance
 end
