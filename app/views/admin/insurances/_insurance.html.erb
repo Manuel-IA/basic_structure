@@ -20,7 +20,7 @@
   </p>
 
   <p>
-    <strong>Users:</strong>
+    <strong><%= link_to "Users", admin_users_url(insurance_id: insurance.id) %>:</strong>
     <% insurance.users.each do | user | %>
       <%= link_to user.email, admin_user_url(id: user.id) %>
     <% end %>
