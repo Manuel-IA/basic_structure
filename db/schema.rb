@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_08_151827) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_213937) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignaments", force: :cascade do |t|
+    t.string "owner_name", null: false
+    t.string "phone_number", null: false
+    t.string "email", null: false
+    t.string "address"
+    t.integer "vin_number"
+    t.integer "po"
+    t.string "plate"
+    t.boolean "deductible"
+    t.boolean "insurance_aproval"
+    t.string "color"
+    t.integer "status_id"
+    t.string "make"
+    t.string "model"
+    t.integer "year"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "insurances", force: :cascade do |t|
     t.string "name", null: false
