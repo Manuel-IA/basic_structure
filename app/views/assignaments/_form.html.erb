@@ -1,0 +1,92 @@
+<%= form_with(model: assignament) do |form| %>
+  <% if assignament.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(assignament.errors.count, "error") %> prohibited this assignament from being saved:</h2>
+
+      <ul>
+        <% assignament.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :owner_name, style: "display: block" %>
+    <%= form.text_field :owner_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :vin_number, style: "display: block" %>
+    <%= form.number_field :vin_number %>
+  </div>
+
+  <div>
+    <%= form.label :po, style: "display: block" %>
+    <%= form.number_field :po %>
+  </div>
+
+  <div>
+    <%= form.label :plate, style: "display: block" %>
+    <%= form.text_field :plate %>
+  </div>
+
+  <div>
+    <%= form.label :deductible, style: "display: block" %>
+    <%= form.check_box :deductible %>
+  </div>
+
+  <div>
+    <%= form.label :insurance_aproval, style: "display: block" %>
+    <%= form.check_box :insurance_aproval %>
+  </div>
+
+  <div>
+    <%= form.label :color, style: "display: block" %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div>
+    <%= form.label :status_id, style: "display: block" %>
+    <%= form.number_field :status_id %>
+  </div>
+
+  <div>
+    <%= form.label :make, style: "display: block" %>
+    <%= form.text_field :make %>
+  </div>
+
+  <div>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label :year, style: "display: block" %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div>
+    <%= form.label :comment, style: "display: block" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

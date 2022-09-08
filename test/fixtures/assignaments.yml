@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_name: MyString
+  phone_number: MyString
+  email: MyString
+  address: MyString
+  vin_number: 1
+  po: 1
+  plate: MyString
+  deductible: false
+  insurance_aproval: false
+  color: MyString
+  status_id: 1
+  make: MyString
+  model: MyString
+  year: 1
+  comment: MyText
+
+two:
+  owner_name: MyString
+  phone_number: MyString
+  email: MyString
+  address: MyString
+  vin_number: 1
+  po: 1
+  plate: MyString
+  deductible: false
+  insurance_aproval: false
+  color: MyString
+  status_id: 1
+  make: MyString
+  model: MyString
+  year: 1
+  comment: MyText
