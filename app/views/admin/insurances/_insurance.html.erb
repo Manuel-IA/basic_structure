@@ -19,4 +19,11 @@
     <%= insurance.color %>
   </p>
 
+  <p>
+    <strong>Users:</strong>
+    <% insurance.users.each do | user | %>
+      <%= link_to user.email, admin_user_url(id: user.id) %>
+    <% end %>
+  </p>
+
 </div>
