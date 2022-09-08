@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_145047) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_151827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_145047) do
     t.string "color", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "insurances_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "insurance_id", null: false
+    t.index ["user_id", "insurance_id"], name: "index_insurances_users_on_user_id_and_insurance_id", unique: true
   end
 
   create_table "user_details", force: :cascade do |t|
