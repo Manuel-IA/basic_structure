@@ -73,7 +73,7 @@ class Admin::UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def admin_user_params
-      permitted_params = [ :email, { details_attributes: [ :role_id, :first_name, :last_name, :phone_number, :additional_info, :status_id ] } ]
+      permitted_params = [ :email, { insurance_ids: [], details_attributes: [ :role_id, :first_name, :last_name, :phone_number, :additional_info, :status_id ] } ]
 
       if ( !params[ :admin_user ].blank? && ( !params[ :admin_user ][ :password ].blank? || !params[ :admin_user ][ :password_confirmation ].blank? ) )
         permitted_params << :password

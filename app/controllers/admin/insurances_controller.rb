@@ -66,6 +66,6 @@ class Admin::InsurancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def admin_insurance_params
-      params.require(:admin_insurance).permit(:name, :email, :contact_name, :color)
+      params.require(:admin_insurance).permit(:name, :email, :contact_name, :color, user_ids: [])
     end
 end
