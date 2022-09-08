@@ -1,5 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
+<% if !@user.blank? %>
+  <h1>User <%= @user.email %></h1>
+  <%= render 'admin/users/user', user: @user %>
+<% end %>
+
 <h1>Insurances</h1>
 
 <%= link_to "New insurance", new_admin_insurance_path %> |
