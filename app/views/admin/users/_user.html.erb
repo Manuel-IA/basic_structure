@@ -35,7 +35,7 @@
   </p>
 
   <p>
-    <strong>Insurances:</strong>
+    <strong><%= link_to "Insurances", admin_insurances_url(user_id: user.id) %>:</strong>
     <% user.insurances.each do | insurance | %>
       <%= link_to insurance.name, admin_insurance_url(id: insurance.id) %>
     <% end %>
