@@ -34,4 +34,11 @@
     <%= user.details.status[:name] %>
   </p>
 
+  <p>
+    <strong>Insurances:</strong>
+    <% user.insurances.each do | insurance | %>
+      <%= link_to insurance.name, admin_insurance_url(id: insurance.id) %>
+    <% end %>
+  </p>
+
 </div>
