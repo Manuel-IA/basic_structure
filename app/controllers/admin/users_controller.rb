@@ -4,7 +4,8 @@ class Admin::UsersController < ApplicationController
 
   # GET /admin/users or /admin/users.json
   def index
-    @admin_users = Admin::User.all
+    @insurance = Admin::Insurance.find_by_id( params[:insurance_id] ) unless params[:insurance_id].blank?
+    @admin_users = @insurance.blank? ? Admin::User.all : @insurance.admin_users
   end
 
   # GET /admin/users/1 or /admin/users/1.json
