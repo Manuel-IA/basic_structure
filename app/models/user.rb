@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_one :details, class_name: :UserDetails, dependent: :destroy
   accepts_nested_attributes_for :details, update_only: true
   has_and_belongs_to_many :insurances
+  has_and_belongs_to_many :assignaments
 end
