@@ -6,4 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   M.Sidenav.init(elems, {})
   const elemsDropdown = document.querySelectorAll('.dropdown-trigger')
   M.Dropdown.init(elemsDropdown, {})
+  const elemsSelect = document.querySelectorAll('select')
+  M.FormSelect.init(elemsSelect, {})
 })

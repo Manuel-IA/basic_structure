@@ -1,12 +1,17 @@
 <h1>Editing user</h1>
 
-<%= render "form", admin_user: @admin_user %>
+<div>
+  <%= link_to "Show this user", @admin_user %> &nbsp;
+  <%= link_to "Back to users", admin_users_path %>
+
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Show this user", @admin_user %> |
-  <%= link_to "Back to users", admin_users_path %>
+<%= render "form", admin_user: @admin_user %>
 
-  <%= button_to "Destroy this user", @admin_user, method: :delete, form: { data: { turbo_confirm: 'Are you sure ?' } } %>
-</div>
+<br />
+
+<%= button_to "Destroy this user", @admin_user, method: :delete,  class: 'btn waves-effect waves-light red lighten-2', form: { data: { turbo_confirm: 'Are you sure ?' } } %>
+
+<br />

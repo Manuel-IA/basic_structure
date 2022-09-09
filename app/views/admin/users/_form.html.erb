@@ -39,7 +39,7 @@
 
     <div>
       <%= details_form.label :additional_info, style: "display: block" %>
-      <%= details_form.text_area :additional_info %>
+      <%= details_form.text_area :additional_info, class: 'materialize-textarea' %>
     </div>
 
     <div>
@@ -59,10 +59,13 @@
   </div>
 
   <div>
-    <%= form.collection_check_boxes :insurance_ids, Insurance.all, :id, :name %>
+    <%= form.collection_check_boxes :insurance_ids, Insurance.all, :id, :name do |b| %>
+      <%= label_tag () { b.check_box() + content_tag(:span, b.text ) } %> &nbsp;
+    <% end %>
   </div>
+  <br />
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn waves-effect waves-light' %>
   </div>
 <% end %>
