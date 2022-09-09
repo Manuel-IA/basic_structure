@@ -34,9 +34,9 @@
         </p>
 
         <p>
-          <strong><%= link_to "<u>Insurances</u>".html_safe, admin_insurances_url(user_id: user.id) %>:</strong>
+          <strong><%= link_to "<u>Insurances</u>".html_safe, admin_insurances_url(user_id: user.id), data: { turbo: false } %>:</strong>
           <% user.insurances.each do | insurance | %>
-            <%= link_to insurance.name, admin_insurance_url(id: insurance.id) %>
+            <%= link_to insurance.name, admin_insurance_url(id: insurance.id), data: { turbo: false } %>
           <% end %>
         </p>
       </div>

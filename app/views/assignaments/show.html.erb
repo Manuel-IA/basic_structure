@@ -3,8 +3,8 @@
 <br />
 
 <div>
-  <%= link_to "Edit this assignament", edit_assignament_path(@assignament) %> &nbsp;
-  <%= link_to "Back to assignaments", assignaments_path %>
+  <%= link_to "Edit this assignament", edit_assignament_path(@assignament), data: { turbo: false } %> &nbsp;
+  <%= link_to "Back to assignaments", assignaments_path, data: { turbo: false } %>
 </div>
 
 <br />
