@@ -19,9 +19,9 @@
   </head>
 
   <body>
-    <p style="color: green"><%= notice %></p>
-    <p style="color: red"><%= alert %></p>
-    <%= yield %>
+    <%= render 'layouts/application/header' %>
+    <%= render 'layouts/application/main' %>
+    <%= render 'layouts/application/footer' %>
     <%= javascript_importmap_tags %>
   </body>
 </html>
