@@ -2,16 +2,28 @@
 
 <h1>Assignaments</h1>
 
-<%= link_to "New assignament", new_assignament_path %> |
+<%= link_to "New assignament", new_assignament_path %> &nbsp;
 <%= link_to "Back home", root_path %>
+
+<hr />
+
+<br />
 
 <div id="assignaments">
   <% @assignaments.each do |assignament| %>
     <%= render assignament %>
     <p>
-      <%= link_to "Show this assignament", assignament %>
+      <%= link_to "Show this assignament", assignament %> &nbsp;
+      <%= link_to "Edit this assignament", edit_assignament_path(assignament) %> &nbsp;
+      <%= link_to "Destroy this assignament", assignament, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %>
     </p>
+    <br />
   <% end %>
 </div>
 
-<%= link_to "New assignament", new_assignament_path %>
+<hr />
+
+<%= link_to "New assignament", new_assignament_path %> &nbsp;
+<%= link_to "Back home", root_path %>
+
+<br /> <br />
