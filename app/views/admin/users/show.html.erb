@@ -3,12 +3,12 @@
 <br />
 
 <div>
-  <%= link_to "Edit this user", edit_admin_user_path(@admin_user) %>  &nbsp;
-  <%= link_to "Back to users", admin_users_path %>
+  <%= link_to "Edit this user", edit_admin_user_path(@admin_user), data: { turbo: false } %>  &nbsp;
+  <%= link_to "Back to users", admin_users_path, data: { turbo: false } %>
 </div>
 
 <br />
 
 <%= render @admin_user %>
 
-<%= button_to "Destroy this user", @admin_user, method: :delete,  class: 'btn waves-effect waves-light red lighten-2', form: { data: { turbo_confirm: 'Are you sure ?' } } %>
+<%= button_to "Destroy this user", @admin_user, method: :delete,  class: 'btn waves-effect waves-light red lighten-2', data: { turbo: false }, form: { data: { turbo_confirm: 'Are you sure ?' } } %>

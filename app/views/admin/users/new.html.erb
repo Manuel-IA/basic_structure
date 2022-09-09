@@ -1,9 +1,9 @@
 <h1>New user</h1>
 
 <div>
-  <%= link_to "Back to users", admin_users_path %>
+  <%= link_to "Back to users", admin_users_path, data: { turbo: false } %>
 </div>
 
 <br>
 
-<%= render "form", admin_user: @admin_user %>
+<%= render "form", admin_user: @admin_user, data: { turbo: false } %>
