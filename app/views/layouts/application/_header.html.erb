@@ -1,13 +1,18 @@
 <header>
-  <div class="navbar-fixed">  
+  <ul id="dropdown1" class="dropdown-content">
+    <li><%= link_to 'My Profile', edit_user_registration_path, data: { turbo: false } %></li>
+    <li><%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %></li>
+  </ul>
+  <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <%= link_to "Diamond", root_path, class: 'brand-logo' %>
+        <%= link_to "Diamond", root_path, class: 'brand-logo', data: { turbo: false } %>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><%= link_to "Admin users", admin_users_path %></li>
-          <li><%= link_to "Admin insurers", admin_insurances_path %></li>
-          <li><%= link_to "Assignaments", assignaments_path %></li>
+          <li><%= link_to "Admin users", admin_users_path, data: { turbo: false } %></li>
+          <li><%= link_to "Admin insurers", admin_insurances_path, data: { turbo: false } %></li>
+          <li><%= link_to "Assignaments", assignaments_path, data: { turbo: false } %></li>
+          <li><%= link_to "Options <i class='material-icons right'>arrow_drop_down</i>".html_safe, '#!', class: 'dropdown-trigger', data: { target: 'dropdown1' } %></li>
         </ul>
       </div>
     </nav>
@@ -18,8 +23,11 @@
       Diamond
       </div>
     </li>
-    <li><%= link_to "Admin users", admin_users_path %></li>
-    <li><%= link_to "Admin insurers", admin_insurances_path %></li>
-    <li><%= link_to "Assignaments", assignaments_path %></li>
+    <li><%= link_to "Admin users", admin_users_path, data: { turbo: false } %></li>
+    <li><%= link_to "Admin insurers", admin_insurances_path, data: { turbo: false } %></li>
+    <li><%= link_to "Assignaments", assignaments_path, data: { turbo: false } %></li>
+    <li><div class="divider"></div></li>
+    <li><%= link_to 'My Profile', edit_user_registration_path, data: { turbo: false } %></li>
+    <li><%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %></li>
   </ul>
 </header>

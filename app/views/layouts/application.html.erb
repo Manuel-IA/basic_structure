@@ -21,7 +21,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/application/header' %>
+    <%- if user_signed_in? -%>
+      <%= render 'layouts/application/header' %>
+    <%- end -%>
     <%= render 'layouts/application/main' %>
     <%= render 'layouts/application/footer' %>
     <%= javascript_importmap_tags %>

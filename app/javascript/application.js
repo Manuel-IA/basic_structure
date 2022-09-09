@@ -4,4 +4,6 @@ import "@hotwired/turbo-rails"
 document.addEventListener('DOMContentLoaded', function() {
   const elems = document.querySelectorAll('.sidenav')
   M.Sidenav.init(elems, {})
+  const elemsDropdown = document.querySelectorAll('.dropdown-trigger')
+  M.Dropdown.init(elemsDropdown, {})
 })
