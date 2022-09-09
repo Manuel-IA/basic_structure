@@ -2,6 +2,9 @@
 
 <h1>Assignaments</h1>
 
+<%= link_to "New assignament", new_assignament_path %> |
+<%= link_to "Back home", root_path %>
+
 <div id="assignaments">
   <% @assignaments.each do |assignament| %>
     <%= render assignament %>
