@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @admin_insurance %>
+<br />
 
 <div>
-  <%= link_to "Edit this insurance", edit_admin_insurance_path(@admin_insurance) %> |
+  <%= link_to "Edit this insurance", edit_admin_insurance_path(@admin_insurance) %> &nbsp;
   <%= link_to "Back to insurances", admin_insurances_path %>
-
-  <%= button_to "Destroy this insurance", @admin_insurance, method: :delete, form: { data: { turbo_confirm: 'Are you sure ?' } } %>
 </div>
+
+<br />
+
+<%= render @admin_insurance %>
+
+<%= button_to "Destroy this insurance", @admin_insurance, method: :delete, class: 'btn waves-effect waves-light red lighten-2', form: { data: { turbo_confirm: 'Are you sure ?' } } %>

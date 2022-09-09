@@ -7,19 +7,28 @@
 
 <h1>Insurances</h1>
 
-<%= link_to "New insurance", new_admin_insurance_path %> |
+<%= link_to "New insurance", new_admin_insurance_path %> &nbsp;
 <%= link_to "Back home", root_path %>
+
+<hr />
+
+<br />
 
 <div id="admin_insurances">
   <% @admin_insurances.each do |admin_insurance| %>
     <%= render admin_insurance %>
     <p>
-      <%= link_to "Show this insurance", admin_insurance %> |
-      <%= link_to "Edit this insurance", edit_admin_insurance_path(admin_insurance) %> |
+      <%= link_to "Show this insurance", admin_insurance %> &nbsp;
+      <%= link_to "Edit this insurance", edit_admin_insurance_path(admin_insurance) %> &nbsp;
       <%= link_to "Destroy this insurance", admin_insurance, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %>
     </p>
+    <br />
   <% end %>
 </div>
 
-<%= link_to "New insurance", new_admin_insurance_path %> |
+<hr />
+
+<%= link_to "New insurance", new_admin_insurance_path %> &nbsp;
 <%= link_to "Back home", root_path %>
+
+<br /> <br />
