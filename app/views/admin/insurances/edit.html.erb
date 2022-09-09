@@ -1,12 +1,17 @@
 <h1>Editing insurance</h1>
 
-<%= render "form", admin_insurance: @admin_insurance %>
+<div>
+  <%= link_to "Show this insurance", @admin_insurance %> &nbsp;
+  <%= link_to "Back to insurances", admin_insurances_path %>
+
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Show this insurance", @admin_insurance %> |
-  <%= link_to "Back to insurances", admin_insurances_path %>
+<%= render "form", admin_insurance: @admin_insurance %>
 
-  <%= button_to "Destroy this insurance", @admin_insurance, method: :delete, form: { data: { turbo_confirm: 'Are you sure ?' } } %>
-</div>
+<br />
+
+<%= button_to "Destroy this insurance", @admin_insurance, method: :delete,  class: 'btn waves-effect waves-light red lighten-2', form: { data: { turbo_confirm: 'Are you sure ?' } } %>
+
+<br />

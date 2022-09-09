@@ -31,11 +31,15 @@
     <%= form.color_field :color %>
   </div>
 
+  <br />
   <div>
-    <%= form.collection_check_boxes :user_ids, User.all, :id, :email %>
+    <%= form.collection_check_boxes :user_ids, User.all, :id, :email do |b| %>
+      <%= label_tag () { b.check_box() + content_tag(:span, b.text ) } %> &nbsp;
+    <% end %>
   </div>
+  <br />
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn waves-effect waves-light' %>
   </div>
 <% end %>
