@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @admin_user %>
+<br />
 
 <div>
-  <%= link_to "Edit this user", edit_admin_user_path(@admin_user) %> |
+  <%= link_to "Edit this user", edit_admin_user_path(@admin_user) %>  &nbsp;
   <%= link_to "Back to users", admin_users_path %>
-
-  <%= button_to "Destroy this user", @admin_user, method: :delete, form: { data: { turbo_confirm: 'Are you sure ?' } } %>
 </div>
+
+<br />
+
+<%= render @admin_user %>
+
+<%= button_to "Destroy this user", @admin_user, method: :delete,  class: 'btn waves-effect waves-light red lighten-2', form: { data: { turbo_confirm: 'Are you sure ?' } } %>
