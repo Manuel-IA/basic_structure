@@ -48,15 +48,21 @@
     <%= form.text_field :plate %>
   </div>
 
-  <div>
-    <%= form.label :deductible, style: "display: block" %>
-    <%= form.check_box :deductible %>
-  </div>
+  <br />
 
-  <div>
-    <%= form.label :insurance_aproval, style: "display: block" %>
+  <label>
+    <%= form.check_box :deductible %>
+    <%= content_tag :span, :deductible, style: "display: block" %>
+  </label>
+
+  <br />
+
+  <label>
     <%= form.check_box :insurance_aproval %>
-  </div>
+    <%= content_tag :span, :insurance_aproval, style: "display: block" %>
+  </label>
+
+  <br />
 
   <div>
     <%= form.label :color, style: "display: block" %>
@@ -80,10 +86,11 @@
 
   <div>
     <%= form.label :comment, style: "display: block" %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: 'materialize-textarea' %>
   </div>
+  <br />
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn waves-effect waves-light' %>
   </div>
 <% end %>
