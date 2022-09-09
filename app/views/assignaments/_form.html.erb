@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :status_id, value: 1 %>
+
   <div>
     <%= form.label :owner_name, style: "display: block" %>
     <%= form.text_field :owner_name %>
@@ -58,12 +60,7 @@
 
   <div>
     <%= form.label :color, style: "display: block" %>
-    <%= form.text_field :color %>
-  </div>
-
-  <div>
-    <%= form.label :status_id, style: "display: block" %>
-    <%= form.number_field :status_id %>
+    <%= form.color_field :color %>
   </div>
 
   <div>
@@ -77,7 +74,7 @@
   </div>
 
   <div>
-    <%= form.label :year, style: "display: block" %>
+    <%= form.label :year, style: "display: block", min: 1900, max: 2999 %>
     <%= form.number_field :year %>
   </div>
 
