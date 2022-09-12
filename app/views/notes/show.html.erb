@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
+<div>
+  <%= link_to "Edit this note", edit_note_path(@note), data: { turbo: false }%> &nbsp;
+  <%= link_to "Back to notes", notes_path, data: { turbo: false }%> &nbsp;
+  <%= link_to "Go to #{@note.entity_type}", "#{root_path}#{@note.entity_type.downcase.pluralize}/#{@note.entity_id}", data: { turbo: false} %>
+</div>
+
+<br />
+
 <%= render @note %>
 
-<div>
-  <%= link_to "Edit this note", edit_note_path(@note), data: { turbo: false }%> |
-  <%= link_to "Back to notes", notes_path, data: { turbo: false }%> |
-  <%= link_to "Go to #{@note.entity_type}", "#{root_path}#{@note.entity_type.downcase.pluralize}/#{@note.entity_id}", data: { turbo: false} %>
-
-  <%= button_to "Destroy this note", @note, method: :delete %>
-</div>
+<%= button_to "Destroy this note", @note, method: :delete, class: 'btn waves-effect waves-light red lighten-2' %>

@@ -1,17 +1,22 @@
-<div id="<%= dom_id note %>">
-  <p>
-    <strong>User:</strong>
-    <%= note.user.email %>
-  </p>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1" id="<%= dom_id note %>" style="margin-bottom: 0px;">
+      <div class="card-content white-text">
+        <p>
+          <strong>User:</strong>
+          <%= note.user.email %>
+        </p>
 
-  <p>
-    <strong><%= note.entity.class.name %>:</strong>
-    <%= note.entity[:owner_name] || note.entity[:email] %>
-  </p>
+        <p>
+          <strong><%= note.entity.class.name %>:</strong>
+          <%= note.entity[:owner_name] || note.entity[:email] %>
+        </p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= note.content %>
-  </p>
-
+        <p>
+          <strong>Content:</strong>
+          <%= note.content %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
