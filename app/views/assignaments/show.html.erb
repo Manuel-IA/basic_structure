@@ -11,4 +11,8 @@
 
 <%= render @assignament %>
 
+<%= link_to "Create note", new_note_path(assignament: @assignament.id), data: { turbo: false } %>
+
+<br /> <br />
+
 <%= button_to "Destroy this assignament", @assignament, class: 'btn waves-effect waves-light red lighten-2', method: :delete %>
