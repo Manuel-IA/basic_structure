@@ -11,15 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
-  <div>
-    <%= form.label :entity_id, style: "display: block" %>
-    <%= form.text_field :entity_id %>
-  </div>
+  <% if !@entity.blank? %>
+    <%= form.hidden_field :entity_id, value: @entity[1] %>
+    <%= form.hidden_field :entity_type, value: @entity[0].capitalize %>
+  <% end %>
 
   <div>
     <%= form.label :content, style: "display: block" %>

@@ -1,12 +1,12 @@
 <div id="<%= dom_id note %>">
   <p>
     <strong>User:</strong>
-    <%= note.user_id %>
+    <%= note.user.email %>
   </p>
 
   <p>
-    <strong>Entity:</strong>
-    <%= note.entity_id %>
+    <strong><%= note.entity.class.name %>:</strong>
+    <%= note.entity[:owner_name] || note.entity[:email] %>
   </p>
 
   <p>
