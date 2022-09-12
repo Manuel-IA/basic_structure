@@ -2,6 +2,7 @@ class Assignament < ApplicationRecord
   # Associations
   has_many :assignaments_users
   has_many :users, through: :assignaments_users
+  has_many :notes, as: :entity
 
   class << self
     def statuses
