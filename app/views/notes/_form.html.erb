@@ -20,10 +20,10 @@
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class: 'materialize-textarea'%>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn waves-effect waves-light' %>
   </div>
 <% end %>
