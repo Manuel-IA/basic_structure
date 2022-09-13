@@ -1,7 +1,7 @@
 <div id="<%= dom_id role %>">
   <p>
     <strong>Role type:</strong>
-    <%= role.role_type_id %>
+    <%= role.role_type[:name] %>
   </p>
 
   <p>
@@ -16,7 +16,7 @@
 
   <p>
     <strong>Status:</strong>
-    <%= role.status_id %>
+    <%= role.status[:name] %>
   </p>
 
 </div>

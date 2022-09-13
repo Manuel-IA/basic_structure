@@ -1,6 +1,7 @@
 class UserDetails < ApplicationRecord
   # Associations
   belongs_to :user
+  belongs_to :role
 
   class << self
 
@@ -10,14 +11,6 @@ class UserDetails < ApplicationRecord
         { id: 2, name: 'Inactive' }
       ]
     end
-  end
-
-  def role_type
-    Role.role_types.find { |role_type| role_type[ :id ] === role[ :id ] }
-  end
-
-  def role
-    Role.all.find { |role| role[ :id ] === role_id }
   end
 
   def status

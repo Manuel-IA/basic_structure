@@ -65,6 +65,7 @@
   </div>
 
   <div>
+    <%= form.label :insurance_ids, 'Insurances', style: "display: block" %>
     <%= form.collection_check_boxes :insurance_ids, Insurance.all, :id, :name do |b| %>
       <%= label_tag () { b.check_box() + content_tag(:span, b.text ) } %> &nbsp;
     <% end %>
@@ -75,3 +76,5 @@
     <%= form.submit class: 'btn waves-effect waves-light' %>
   </div>
 <% end %>
+
+<br />
