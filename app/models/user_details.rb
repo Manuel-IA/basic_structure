@@ -13,11 +13,11 @@ class UserDetails < ApplicationRecord
   end
 
   def role_type
-    self.class.role_types.find { |role_type| role_type[ :id ] === role[ :id ] }
+    Role.role_types.find { |role_type| role_type[ :id ] === role[ :id ] }
   end
 
   def role
-    self.class.roles.find { |role| role[ :id ] === role_id }
+    Role.all.find { |role| role[ :id ] === role_id }
   end
 
   def status
