@@ -40,6 +40,7 @@ class Admin::UsersController < ApplicationController
   # PATCH/PUT /admin/users/1 or /admin/users/1.json
   def update
     respond_to do |format|
+      debugger
       if @admin_user.update(admin_user_params)
         format.html { redirect_to admin_user_url(@admin_user), notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_user }
@@ -73,7 +74,7 @@ class Admin::UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def admin_user_params
-      permitted_params = [ :email, { insurance_ids: [], details_attributes: [ :role_id, :first_name, :last_name, :phone_number, :additional_info, :status_id ] } ]
+      permitted_params = [ :email, { insurance_ids: [], role_ids: [], details_attributes: [ :first_name, :last_name, :phone_number, :additional_info, :status_id ] } ]
 
       if ( !params[ :admin_user ].blank? && ( !params[ :admin_user ][ :password ].blank? || !params[ :admin_user ][ :password_confirmation ].blank? ) )
         permitted_params << :password

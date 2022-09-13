@@ -12,11 +12,18 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <br />
+
+  <div>
+    <%= f.label :role_ids, 'Roles', style: "display: block" %>
+    <%= f.collection_check_boxes :role_ids, Role.all, :id, :name do |b| %>
+      <%= label_tag () { b.check_box() + content_tag(:span, b.text ) } %> &nbsp;
+    <% end %>
+  </div>
+
+  <br />
+
   <%= f.fields_for :details do |details_form| %>
-    <div class="field">
-      <%= details_form.label :role_id %><br />
-      <%= details_form.select :role_id, (@roles.map{|role|[role[:name],role[:id]]}), {include_blank: 'Please Select a Role'}, required: true %>
-    </div>
 
     <div class="field">
       <%= details_form.label :first_name %><br />
