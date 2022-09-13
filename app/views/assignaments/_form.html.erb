@@ -34,6 +34,11 @@
   </div>
 
   <div>
+    <%= form.label :insurance_id, style: "display: block" %>
+    <%= form.select :insurance_id, (Insurance.all.map{|insurance|[insurance[:name],insurance[:id]]}), {include_blank: 'Please Select a Insurance'}, required: true %>
+  </div>
+
+  <div>
     <%= form.label :vin_number, style: "display: block" %>
     <%= form.number_field :vin_number %>
   </div>
