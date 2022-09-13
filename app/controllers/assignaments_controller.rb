@@ -3,7 +3,7 @@ class AssignamentsController < ApplicationController
 
   # GET /assignaments or /assignaments.json
   def index
-    @assignaments = Assignament.all
+    @assignaments = params[:status_id] == '1' ? Assignament.all.unassigned : Assignament.all
   end
 
   # GET /assignaments/1 or /assignaments/1.json
@@ -65,6 +65,6 @@ class AssignamentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def assignament_params
-      params.require(:assignament).permit(:owner_name, :phone_number, :email, :address, :vin_number, :po, :plate, :deductible, :insurance_aproval, :color, :status_id, :make, :model, :year, :comment)
+      params.require(:assignament).permit(:owner_name, :phone_number, :email, :address, :vin_number, :po, :plate, :deductible, :insurance_aproval, :color, :status_id, :make, :model, :year, :comment, :insurance_id)
     end
 end

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card" id="<%= dom_id assignament %>" style="margin-bottom: 0px;">
+      <div class="card-content">
+        <span class="card-title"><%= assignament.make %> <%= assignament.model %> <%= assignament.year %> - <%= assignament.color %></span>
+
+        <p>
+          <strong>Reception date:</strong>
+          <%= assignament.created_at.to_date %>
+        </p>
+
+        <p>
+          <strong>Insurance:</strong>
+          <%= assignament.insurance.name %>
+        </p>
+
+        <p>
+          <%= collection_select '', 'rpm', User.all, :id, :first_name, prompt: 'Please Select a RPM' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

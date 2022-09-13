@@ -1,0 +1,6 @@
+<div id="assignaments">
+  <% @assignaments.each do |assignament| %>
+    <%= render 'assignaments/unassigned/assignament', assignament: assignament %>
+    <br />
+  <% end %>
+</div>

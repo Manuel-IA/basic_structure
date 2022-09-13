@@ -8,18 +8,21 @@
 <hr />
 
 <br />
-
-<div id="assignaments">
-  <% @assignaments.each do |assignament| %>
-    <%= render assignament %>
-    <p>
-      <%= link_to "Show this assignament", assignament %> &nbsp;
-      <%= link_to "Edit this assignament", edit_assignament_path(assignament) %> &nbsp;
-      <%= link_to "Destroy this assignament", assignament, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %>
-    </p>
-    <br />
-  <% end %>
-</div>
+<% if params[:status_id] == '1' %>
+  <%= render 'assignaments/unassigned/list' %>
+<% else %>
+  <div id="assignaments">
+    <% @assignaments.each do |assignament| %>
+      <%= render assignament %>
+      <p>
+        <%= link_to "Show this assignament", assignament %> &nbsp;
+        <%= link_to "Edit this assignament", edit_assignament_path(assignament) %> &nbsp;
+        <%= link_to "Destroy this assignament", assignament, data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' } %>
+      </p>
+      <br />
+    <% end %>
+  </div>
+<% end %>
 
 <hr />
 
