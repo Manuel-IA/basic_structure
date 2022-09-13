@@ -1,4 +1,6 @@
 class Role < ApplicationRecord
+  # Associations
+  has_and_belongs_to_many :users
 
   class << self
     def role_types

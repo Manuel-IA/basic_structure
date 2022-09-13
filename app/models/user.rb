@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_and_belongs_to_many :insurances
   has_many :assignaments_users
   has_many :assignaments, through: :assignaments_users
+  has_and_belongs_to_many :roles
 end
