@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def set_form_choices
-    @roles = UserDetails.roles
+    @roles = Role.all
     @statuses = UserDetails.statuses
   end
 
