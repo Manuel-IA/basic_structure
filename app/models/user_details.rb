@@ -1,7 +1,7 @@
 class UserDetails < ApplicationRecord
   # Associations
   belongs_to :user
-  belongs_to :role
+  belongs_to :role, optional: true
 
   class << self
 
