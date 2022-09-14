@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <% if !@insurance.blank? %>
   <h1>Insurance <%= @insurance.name %></h1>
   <%= render 'admin/insurances/insurance', insurance: @insurance %>

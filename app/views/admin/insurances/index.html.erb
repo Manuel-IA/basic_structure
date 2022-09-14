@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <% if !@user.blank? %>
   <h1>User <%= @user.email %></h1>
   <%= render 'admin/users/user', user: @user %>
