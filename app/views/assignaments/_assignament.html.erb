@@ -39,6 +39,11 @@
         </p>
 
         <p>
+          <strong>Insurance:</strong>
+          <%= assignament.insurance.name %>
+        </p>
+
+        <p>
           <strong>Deductible:</strong>
           <%= assignament.deductible %>
         </p>
@@ -76,6 +81,11 @@
         <p>
           <strong>Comment:</strong>
           <%= assignament.comment %>
+        </p>
+
+        <p>
+          <strong>Notes:</strong>
+          <%= link_to assignament.notes.count, notes_path(assignament_id: assignament.id) %>
         </p>
       </div>
     </div>

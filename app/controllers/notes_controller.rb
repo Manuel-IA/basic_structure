@@ -4,7 +4,8 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.all
+    @assignament = Assignament.find_by_id( params[:assignament_id] ) unless params[:assignament_id].blank?
+    @notes = @insurance.blank? ? Note.all : @assignament.notes
   end
 
   # GET /notes/1 or /notes/1.json
