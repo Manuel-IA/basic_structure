@@ -25,7 +25,6 @@ class Admin::UsersController < ApplicationController
   # POST /admin/users or /admin/users.json
   def create
     @admin_user = Admin::User.new(admin_user_params)
-
     respond_to do |format|
       if @admin_user.save
         format.html { redirect_to admin_user_url(@admin_user), notice: "User was successfully created." }
@@ -40,7 +39,6 @@ class Admin::UsersController < ApplicationController
   # PATCH/PUT /admin/users/1 or /admin/users/1.json
   def update
     respond_to do |format|
-      debugger
       if @admin_user.update(admin_user_params)
         format.html { redirect_to admin_user_url(@admin_user), notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_user }
